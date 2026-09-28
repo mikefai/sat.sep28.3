@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Bookmark, Slash, CheckCircle2, Circle, AlertCircle, FileText } from 'lucide-react';
+import { Bookmark, Slash, AlertCircle, FileText } from 'lucide-react';
 import { Question } from '../../types/exam';
 import { MathRenderer } from '../common/MathRenderer';
 

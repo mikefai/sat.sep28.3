@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ExamSession, ExamId, SectionId, ModuleNumber, ExamResult } from '../types/exam';
-import { getModuleQuestions, getExamQuestions } from '../data';
+import { ExamSession, ExamResult } from '../types/exam';
+import { getModuleQuestions } from '../data';
 import { computeExamResult } from '../utils/scoring';
 import { ExamHeader } from '../components/exam/ExamHeader';
 import { QuestionView } from '../components/exam/QuestionView';

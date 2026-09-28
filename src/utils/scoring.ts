@@ -60,54 +60,38 @@ export function rawToScaledRW(rawScore: number, totalQuestions: number = 54): nu
   if (rawScore <= 0) return 200;
   if (rawScore >= totalQuestions) return 800;
 
-  // Realistic Digital SAT RW curve
-  // 54/54 = 800
-  // 53/54 = 790
-  // 52/54 = 780
-  // 50/54 = 750
-  // 45/54 = 690
-  // 40/54 = 630
-  // 35/54 = 570
-  // 30/54 = 510
-  // 25/54 = 450
-  // 20/54 = 390
-  // 15/54 = 330
-  // 10/54 = 270
   const ratio = rawScore / totalQuestions;
+  let score = 200;
   
-  if (ratio >= 0.98) return 800;
-  if (ratio >= 0.95) return Math.round(770 + (ratio - 0.95) * 600); // 770-800
-  if (ratio >= 0.85) return Math.round(680 + (ratio - 0.85) * 900); // 680-770
-  if (ratio >= 0.70) return Math.round(570 + (ratio - 0.70) * 733); // 570-680
-  if (ratio >= 0.50) return Math.round(440 + (ratio - 0.50) * 650); // 440-570
-  if (ratio >= 0.30) return Math.round(320 + (ratio - 0.30) * 600); // 320-440
-  return Math.max(200, Math.round(200 + ratio * 400));
+  if (ratio >= 0.98) score = 800;
+  else if (ratio >= 0.95) score = 770 + (ratio - 0.95) * 600; // 770-800
+  else if (ratio >= 0.85) score = 680 + (ratio - 0.85) * 900; // 680-770
+  else if (ratio >= 0.70) score = 570 + (ratio - 0.70) * 733; // 570-680
+  else if (ratio >= 0.50) score = 440 + (ratio - 0.50) * 650; // 440-570
+  else if (ratio >= 0.30) score = 320 + (ratio - 0.30) * 600; // 320-440
+  else score = 200 + ratio * 400;
+
+  const rounded = Math.round(score / 10) * 10;
+  return Math.min(800, Math.max(200, rounded));
 }
 
 export function rawToScaledMath(rawScore: number, totalQuestions: number = 44): number {
   if (rawScore <= 0) return 200;
   if (rawScore >= totalQuestions) return 800;
 
-  // Realistic Digital SAT Math curve
-  // 44/44 = 800
-  // 43/44 = 790
-  // 42/44 = 780
-  // 40/44 = 750
-  // 36/44 = 690
-  // 32/44 = 630
-  // 28/44 = 570
-  // 22/44 = 490
-  // 16/44 = 410
-  // 10/44 = 320
   const ratio = rawScore / totalQuestions;
+  let score = 200;
   
-  if (ratio >= 0.97) return 800;
-  if (ratio >= 0.93) return Math.round(770 + (ratio - 0.93) * 750); // 770-800
-  if (ratio >= 0.82) return Math.round(680 + (ratio - 0.82) * 818); // 680-770
-  if (ratio >= 0.65) return Math.round(560 + (ratio - 0.65) * 705); // 560-680
-  if (ratio >= 0.45) return Math.round(430 + (ratio - 0.45) * 650); // 430-560
-  if (ratio >= 0.25) return Math.round(300 + (ratio - 0.25) * 650); // 300-430
-  return Math.max(200, Math.round(200 + ratio * 400));
+  if (ratio >= 0.97) score = 800;
+  else if (ratio >= 0.93) score = 770 + (ratio - 0.93) * 750; // 770-800
+  else if (ratio >= 0.82) score = 680 + (ratio - 0.82) * 818; // 680-770
+  else if (ratio >= 0.65) score = 560 + (ratio - 0.65) * 705; // 560-680
+  else if (ratio >= 0.45) score = 430 + (ratio - 0.45) * 650; // 430-560
+  else if (ratio >= 0.25) score = 300 + (ratio - 0.25) * 650; // 300-430
+  else score = 200 + ratio * 400;
+
+  const rounded = Math.round(score / 10) * 10;
+  return Math.min(800, Math.max(200, rounded));
 }
 
 export function calculatePercentile(compositeScore: number): number {

@@ -355,7 +355,7 @@ export const mock1_math_module2: Question[] = [
     id: 'm1-m2-q15',
     examId: 'mock-1',
     section: 'math',
-    module: 1,
+    module: 2,
     questionNumber: 15,
     domain: 'Advanced Math',
     skill: 'Composite functions',
@@ -418,12 +418,12 @@ export const mock1_math_module2: Question[] = [
       { id: 'C', text: '$-1$' },
       { id: 'D', text: '2' }
     ],
-    answer: 'A',
-    explanation: 'Square both sides:\n$$3x + 19 = (x + 3)^2$$\n$$3x + 19 = x^2 + 6x + 9$$\n$$x^2 + 3x - 10 = 0$$\nFactor:\n$$(x + 5)(x - 2) = 0 \\implies x = 2 \\text{ or } x = -5$$\nCheck for extraneous solutions:\n1) For $x = 2$: $\\sqrt{3(2) + 19} = \\sqrt{25} = 5$; $2 + 3 = 5$. (Valid: $5 = 5$)\n2) For $x = -5$: $\\sqrt{3(-5) + 19} = \\sqrt{4} = 2$; $-5 + 3 = -2$. (Extraneous: $2 \\neq -2$)\nTherefore, the only real solution is $x = 2$, and the sum of all valid real solutions is 2? Wait! Let\'s check the choices.\nLet\'s recheck: $x = 2$ is the ONLY real solution. Choice D is 2!',
+    answer: 'D',
+    explanation: 'Square both sides:\n$$3x + 19 = (x + 3)^2$$\n$$3x + 19 = x^2 + 6x + 9$$\n$$x^2 + 3x - 10 = 0$$\nFactor:\n$$(x + 5)(x - 2) = 0 \\implies x = 2 \\text{ or } x = -5$$\nCheck for extraneous solutions:\n1) For $x = 2$: $\\sqrt{3(2) + 19} = \\sqrt{25} = 5$; $2 + 3 = 5$. (Valid: $5 = 5$)\n2) For $x = -5$: $\\sqrt{3(-5) + 19} = \\sqrt{4} = 2$; $-5 + 3 = -2$. (Extraneous: $2 \\neq -2$)\nTherefore, the only real solution is $x = 2$, and the sum of all valid real solutions is 2 (Choice D).',
     distractorExplanations: {
-      C: { whyStudentsChoose: 'Added both roots including extraneous root: $2 + (-5) = -3$.', whyIncorrect: '$x = -5$ is extraneous because the principal square root is non-negative ($2 \\neq -2$).', coreTrap: 'Extraneous root inclusion.' },
-      A: { whyStudentsChoose: 'Mistook $-3/a$ sum of roots formula directly without checking extraneous root.', whyIncorrect: 'The Vieta sum gives $-3$, but one root is extraneous.', coreTrap: 'Blind application of Vieta theorem.' },
-      B: { whyStudentsChoose: 'Took Vieta sum directly: $-b/a = -3$.', whyIncorrect: '$x = -5$ does not satisfy the original radical equation.', coreTrap: 'Extraneous root trap.' }
+      A: { whyStudentsChoose: 'Mistook $-3/a$ sum of roots formula directly or arithmetic error.', whyIncorrect: 'The only valid root is $x = 2$.', coreTrap: 'Calculation slip.' },
+      B: { whyStudentsChoose: 'Took Vieta sum directly: $-b/a = -3$.', whyIncorrect: '$x = -5$ is extraneous and does not satisfy the original radical equation.', coreTrap: 'Extraneous root trap.' },
+      C: { whyStudentsChoose: 'Added both roots with arithmetic error.', whyIncorrect: '$x = -5$ is an extraneous solution and must be discarded.', coreTrap: 'Extraneous root inclusion.' }
     }
   },
   {

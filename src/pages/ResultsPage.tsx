@@ -6,20 +6,13 @@ import {
   XCircle, 
   Clock, 
   BarChart3, 
-  BookOpen, 
-  HelpCircle, 
   Printer, 
   ArrowLeft, 
-  Bookmark, 
   Flame, 
-  ChevronRight,
-  TrendingUp,
-  Target,
-  FileCheck,
-  RotateCcw,
-  Sparkles,
-  Filter,
-  X
+  FileCheck, 
+  RotateCcw, 
+  Sparkles, 
+  X 
 } from 'lucide-react';
 import { ExamResult, Question, DifficultyLevel } from '../types/exam';
 import { getQuestionById } from '../data';

@@ -4,28 +4,21 @@ import {
   Sparkles, 
   CheckCircle2, 
   XCircle, 
-  HelpCircle, 
   BookOpen, 
   Target, 
   ChevronRight, 
   RotateCcw, 
   Filter, 
-  Award, 
   AlertTriangle, 
   Lightbulb, 
   Compass, 
   PenTool, 
   Eye, 
   EyeOff,
-  Clock,
   ArrowRight,
-  TrendingUp,
-  Bookmark,
-  Share2,
-  Check,
   X
 } from 'lucide-react';
-import { HARDEST_QUESTIONS, HardestQuestionItem } from '../data/hardest_questions';
+import { HARDEST_QUESTIONS } from '../data/hardest_questions';
 import { MathRenderer } from '../components/common/MathRenderer';
 
 interface HardestQuestionsPageProps {
@@ -34,7 +27,7 @@ interface HardestQuestionsPageProps {
 }
 
 export const HardestQuestionsPage: React.FC<HardestQuestionsPageProps> = ({
-  onNavigateHome,
+  onNavigateHome: _onNavigateHome,
   onStartExam
 }) => {
   // State
@@ -45,7 +38,6 @@ export const HardestQuestionsPage: React.FC<HardestQuestionsPageProps> = ({
   const [eliminations, setEliminations] = useState<Record<string, Record<string, boolean>>>({});
   const [revealedRationales, setRevealedRationales] = useState<Record<string, boolean>>({});
   const [showRulebookModal, setShowRulebookModal] = useState<boolean>(false);
-  const [activeQuestionId, setActiveQuestionId] = useState<string>(HARDEST_QUESTIONS[0].id);
 
   // Filter questions
   const filteredQuestions = useMemo(() => {

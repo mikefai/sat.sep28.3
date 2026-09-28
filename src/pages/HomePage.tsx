@@ -9,17 +9,13 @@ import {
   Sparkles, 
   BookOpen, 
   Calculator, 
-  Zap, 
   ArrowRight,
-  Target,
   TrendingUp,
   Brain,
-  Check,
   Flame,
   Compass,
   PenTool
 } from 'lucide-react';
-import { EXAM_METADATA } from '../data';
 import { rawToScaledRW, rawToScaledMath, calculatePercentile, generateScoreRange } from '../utils/scoring';
 
 interface HomePageProps {

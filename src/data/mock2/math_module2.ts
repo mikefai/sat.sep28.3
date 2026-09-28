@@ -243,8 +243,8 @@ export const mock2_math_module2: Question[] = [
       { id: 'C', text: 'Exactly two' },
       { id: 'D', text: 'Infinitely many' }
     ],
-    answer: 'A',
-    explanation: 'Substitute $y = 3x - 5$ into the circle equation $x^2 + y^2 = 4$:\n$$x^2 + (3x - 5)^2 = 4$$\n$$x^2 + (9x^2 - 30x + 25) = 4$$\n$$10x^2 - 30x + 21 = 0$$\nEvaluate the discriminant $\\Delta = b^2 - 4ac$ for $a = 10, b = -30, c = 21$:\n$$\\Delta = (-30)^2 - 4(10)(21) = 900 - 840 = 60 > 0$$\nWait! Let\'s check: $900 - 840 = +60 > 0$! That means there are TWO real intersection points!\nLet\'s check the distance from origin $(0,0)$ to line $3x - y - 5 = 0$:\n$$d = \\frac{|3(0) - 1(0) - 5|}{\\sqrt{3^2 + (-1)^2}} = \\frac{5}{\\sqrt{10}} = \\sqrt{\\frac{25}{10}} = \\sqrt{2.5} \\approx 1.58$$\nSince radius $r = \\sqrt{4} = 2$, and distance $d = 1.58 < 2$, the line passes through the interior of the circle, intersecting it at EXACTLY TWO points!\nTherefore, Choice C (Exactly two) is the correct answer!',
+    answer: 'C',
+    explanation: 'Substitute $y = 3x - 5$ into the circle equation $x^2 + y^2 = 4$:\n$$x^2 + (3x - 5)^2 = 4$$\n$$x^2 + (9x^2 - 30x + 25) = 4$$\n$$10x^2 - 30x + 21 = 0$$\nEvaluate the discriminant $\\Delta = b^2 - 4ac$ for $a = 10, b = -30, c = 21$:\n$$\\Delta = (-30)^2 - 4(10)(21) = 900 - 840 = 60 > 0$$\nSince the discriminant is strictly positive ($\\Delta = 60 > 0$), there are exactly two real solutions for $x$, each corresponding to a distinct point of intersection. Thus, the line and circle share exactly two intersection points (Choice C).',
     distractorExplanations: {
       A: { whyStudentsChoose: 'Assumed the line was too far from the origin.', whyIncorrect: 'The distance to origin is $\\sqrt{2.5} \\approx 1.58 < 2$, so it intersects the circle twice.', coreTrap: 'Visual estimation error.' },
       B: { whyStudentsChoose: 'Assumed the line was tangent to the circle.', whyIncorrect: 'Tangency requires $d = r = 2$ and discriminant $\\Delta = 0$, but here $\\Delta = 60 > 0$.', coreTrap: 'Tangency assumption.' },

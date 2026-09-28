@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Calculator, Move, RotateCcw, HelpCircle } from 'lucide-react';
+import { X, Calculator, RotateCcw } from 'lucide-react';
 
 interface CalculatorModalProps {
   isOpen: boolean;
@@ -16,14 +16,22 @@ export const CalculatorModal: React.FC<CalculatorModalProps> = ({ isOpen, onClos
   const dragRef = useRef<{ startX: number; startY: number; posX: number; posY: number }>({ startX: 0, startY: 0, posX: 100, posY: 100 });
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-  // Position modal centrally on open
+  // Position modal centrally on open and listen for Esc key
   useEffect(() => {
     if (isOpen) {
       const initialX = Math.max(20, Math.min(window.innerWidth - 460, window.innerWidth / 2 - 220));
       const initialY = Math.max(50, Math.min(window.innerHeight - 560, window.innerHeight / 2 - 270));
       setPosition({ x: initialX, y: initialY });
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
     }
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
