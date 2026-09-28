@@ -14,7 +14,10 @@ import {
   Target,
   TrendingUp,
   Brain,
-  Check
+  Check,
+  Flame,
+  Compass,
+  PenTool
 } from 'lucide-react';
 import { EXAM_METADATA } from '../data';
 import { rawToScaledRW, rawToScaledMath, calculatePercentile, generateScoreRange } from '../utils/scoring';
@@ -267,6 +270,47 @@ export const HomePage: React.FC<HomePageProps> = ({ onStartExam, onNavigate }) =
                 <span>Launch Mock Exam 2</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Elite 1500+ Hardest Inference & Punctuation Masterclass Spotlight */}
+        <div className="mt-12 rounded-3xl bg-gradient-to-br from-slate-900 via-brand-950 to-indigo-950 text-white p-8 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="space-y-4 max-w-2xl relative z-10">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
+              <Flame className="w-4 h-4 text-amber-400 fill-amber-400 animate-pulse" />
+              <span>SAT 2026 Elite Module • Top 1% Challenge</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
+              The 20 Hardest Inference & Punctuation Questions
+            </h3>
+            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Target the subtlest Reading & Writing traps: experimental control boundaries, theoretical cosmological models, colon explanatory amplification, conjunctive adverb splices, and restrictive appositive traps. Complete with instant distractor trap rationales.
+            </p>
+            <div className="flex flex-wrap gap-4 text-xs font-semibold text-slate-300 pt-1">
+              <div className="flex items-center space-x-1.5">
+                <Compass className="w-4 h-4 text-sky-400" />
+                <span>10 Deep Scientific & Literary Inferences</span>
+              </div>
+              <div className="flex items-center space-x-1.5">
+                <PenTool className="w-4 h-4 text-purple-400" />
+                <span>10 Tricky Boundary & Punctuation Traps</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 shrink-0 w-full md:w-auto text-center">
+            <button
+              onClick={() => onNavigate('hardest-drills')}
+              className="w-full md:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-sm shadow-xl shadow-amber-500/20 hover:scale-105 transition flex items-center justify-center space-x-2"
+            >
+              <Flame className="w-4 h-4 fill-slate-950" />
+              <span>Launch 1500+ Masterclass</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            <div className="text-[11px] text-slate-400 mt-2 font-medium">
+              Diagnostic Mode + Instant Explanations
             </div>
           </div>
         </div>

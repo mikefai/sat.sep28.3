@@ -103,3 +103,6 @@ export function getQuestionById(questionId: string): Question | undefined {
   const all = [...getExamQuestions('mock-1'), ...getExamQuestions('mock-2')];
   return all.find(q => q.id === questionId);
 }
+
+export * from './hardest_questions';
+

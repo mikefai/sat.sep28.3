@@ -7,6 +7,7 @@ import { ExamInterfacePage } from './pages/ExamInterfacePage';
 import { ResultsPage } from './pages/ResultsPage';
 import { QuestionBankPage } from './pages/QuestionBankPage';
 import { ResultsHistoryPage } from './pages/ResultsHistoryPage';
+import { HardestQuestionsPage } from './pages/HardestQuestionsPage';
 
 const SESSION_STORAGE_KEY = 'apex_dsat_session_v1';
 const HISTORY_STORAGE_KEY = 'apex_dsat_history_v1';
@@ -171,6 +172,13 @@ export function App() {
           result={activeResult}
           onRetakeExam={() => handleStartExam(activeResult.examId, 'timed')}
           onNavigate={(page) => setCurrentPage(page)}
+        />
+      )}
+
+      {currentPage === 'hardest-drills' && (
+        <HardestQuestionsPage
+          onNavigateHome={() => setCurrentPage('home')}
+          onStartExam={(id) => handleStartExam(id, 'timed')}
         />
       )}
 
