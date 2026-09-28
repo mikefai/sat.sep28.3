@@ -328,7 +328,7 @@ export const HardestQuestionsPage: React.FC<HardestQuestionsPageProps> = ({
                 <div className="p-6 sm:p-8 space-y-6">
                   {/* Passage Box with DSAT Serif Styling */}
                   {q.passage && (
-                    <div className="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-serif text-[15px] sm:text-base leading-relaxed tracking-normal">
+                    <div className="passage-content p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-slate-800 dark:text-slate-200 text-[15px] sm:text-base">
                       <MathRenderer content={q.passage} />
                     </div>
                   )}

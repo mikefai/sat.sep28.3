@@ -3,24 +3,71 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
   body {
     @apply font-sans;
+    font-variant-numeric: tabular-nums;
   }
 }
 
-/* Bluebook passage styling */
+/* Authentic Bluebook SAT Reading & Writing Passage Typography */
 .passage-content {
-  font-family: 'Lora', Georgia, serif;
-  line-height: 1.75;
+  font-family: 'Lora', 'Merriweather', Georgia, 'Times New Roman', serif;
+  line-height: 1.82;
   font-size: 1.0625rem;
+  letter-spacing: -0.008em;
+  word-spacing: 0.02em;
 }
 
 .passage-content p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .passage-content p:last-child {
   margin-bottom: 0;
+}
+
+.passage-content em,
+.passage-content i {
+  font-style: italic;
+  font-family: inherit;
+}
+
+.passage-content strong,
+.passage-content b {
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* KaTeX Mathematical Typography Optimization */
+.katex {
+  font-size: 1.05em;
+  line-height: 1.2;
+  text-rendering: auto;
+}
+
+.katex-display {
+  margin: 0.75em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.katex-display > .katex {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Tabular numbers for Timers & SPR Math Inputs */
+.font-timer {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Custom scrollbar for exam panes */
